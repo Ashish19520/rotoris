@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Switzer', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #13131f;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #13131f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  :focus-visible {
+    outline: 2px solid #007A61;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .font-rotoris {
+    font-family: 'Switzer', system-ui, sans-serif;
+  }
+
+  .font-decimal {
+    font-family: 'Decimal', system-ui, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-glass {
+    @apply px-5 py-3 rounded-full border border-white/20 bg-black/50 backdrop-blur-sm;
+    @apply text-white/90 text-sm font-medium;
+    @apply transition-all duration-300;
+    @apply hover:bg-black/70 hover:border-white/30;
+  }
+
+  .btn-primary {
+    @apply w-full bg-rotoris-accent rounded px-6 py-3.5;
+    @apply text-white font-medium;
+    @apply transition-all duration-300;
+    @apply hover:bg-opacity-90 hover:scale-[1.02];
+    @apply focus:ring-2 focus:ring-rotoris-accent focus:ring-offset-2 focus:ring-offset-black;
+  }
+
+  .input-field {
+    @apply w-full bg-transparent border-b border-white/20 py-3 pl-10 pr-0;
+    @apply text-white placeholder:text-white/60;
+    @apply focus:outline-none focus:border-white/60;
+    @apply transition-colors duration-300;
+    @apply disabled:opacity-50;
+  }
+
+  .gradient-bronze-top {
+    background: linear-gradient(180deg, rgb(74, 54, 33) 9.11%, rgba(74, 54, 33, 0) 53.79%);
+  }
+
+  .gradient-bronze-bottom {
+    background: linear-gradient(0deg, rgb(74, 54, 33) 0%, rgba(74, 54, 33, 0) 60%);
+  }
+
+  .gradient-dark-bottom {
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .parallax-image {
+    @apply absolute transition-transform duration-100 ease-out;
+    will-change: transform;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .aspect-watch {
+    aspect-ratio: 3/4;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+.phone-input-custom .PhoneInput {
+  @apply flex items-center gap-2;
+}
+
+.phone-input-custom .PhoneInputCountry {
+  @apply flex items-center gap-1;
+}
+
+.phone-input-custom .PhoneInputCountrySelect {
+  @apply bg-transparent border-none text-white appearance-none cursor-pointer;
+  @apply focus:outline-none;
+}
+
+.phone-input-custom .PhoneInputCountryIcon {
+  @apply w-5 h-4;
+}
+
+.phone-input-custom .PhoneInputCountrySelectArrow {
+  @apply border-white/60;
+}
+
+.phone-input-custom .PhoneInputInput {
+  @apply bg-transparent border-b border-white/20 py-3 px-2;
+  @apply text-white placeholder:text-white/60;
+  @apply focus:outline-none focus:border-white/60;
+  @apply transition-colors duration-300 flex-1;
+}
