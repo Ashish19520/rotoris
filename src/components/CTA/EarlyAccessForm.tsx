@@ -60,7 +60,7 @@ function InputField({ id, type, value, onChange, placeholder, required, disabled
   );
 }
 
-export function EarlyAccessForm() {
+export default function EarlyAccessForm() {
   const [form, setForm] = useState<FormState>(initialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');

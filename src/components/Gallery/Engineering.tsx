@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView, useIsMobile } from '../../hooks';
 import { fadeUpVariants, staggerContainerVariants } from '../../utils/animations';
 
-export function Engineering() {
+export default function Engineering() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
 

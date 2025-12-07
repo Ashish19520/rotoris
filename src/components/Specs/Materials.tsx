@@ -7,7 +7,7 @@ import { Modal } from '../Modal';
 import { PlusCircleIcon } from '../ui';
 import type { Material } from '../../types';
 
-export function Materials() {
+export default function Materials() {
   const [selectedMaterial, setSelectedMaterial] = useState<Material | null>(null);
 
   const { ref, inView } = useInView<HTMLDivElement>({

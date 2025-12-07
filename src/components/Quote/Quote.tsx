@@ -32,7 +32,7 @@ function QuoteIcon({ className = '' }: { className?: string }) {
 
 const QUOTE_TEXT = 'What you wear on your wrist is your drive of the future.';
 
-export function Quote() {
+export default function Quote() {
   return (
     <section className="w-full bg-black">
       <div className="block md:hidden">

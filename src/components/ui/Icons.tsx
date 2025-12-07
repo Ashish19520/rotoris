@@ -100,7 +100,7 @@ export function PlusCircleIcon({ className = '', size = 24 }: IconProps) {
   );
 }
 
-export function CheckIcon({ className = '', size = 32 }: IconProps) {
+export function CheckIcon({ size = 32 }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#007A61" strokeWidth="2">
       <polyline points="20 6 9 17 4 12" />

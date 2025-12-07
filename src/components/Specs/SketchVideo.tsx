@@ -8,7 +8,7 @@ const VIDEO_URLS = {
   desktop: 'https://prelaunch-rotoris.s3.ap-south-1.amazonaws.com/public/assets/products/auriqua/Arvion+H+compressed.mp4',
 };
 
-export function SketchVideo() {
+export default function SketchVideo() {
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
   const isMobile = useIsMobile();

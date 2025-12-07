@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from '../../hooks';
 import { fadeUpVariants, staggerContainerVariants } from '../../utils/animations';
 
-export function Ideation() {
+export default function Ideation() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const { ref: inViewRef, inView } = useInView<HTMLDivElement>({
