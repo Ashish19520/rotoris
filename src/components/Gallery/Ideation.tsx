@@ -97,7 +97,7 @@ export default function Ideation() {
               loading="lazy"
               width="260"
               height="320"
-              className="rounded-lg w-[222px] md:w-[215px] lg:w-[265px] h-auto opacity-80"
+              className="rounded-lg w-[222px] -mt-[100px] md:w-[215px] lg:w-[265px] h-auto opacity-80"
               src="/assets/arvion/Astonia-speedometer.webp"
               style={{ y: y1 }}
             />
@@ -106,7 +106,7 @@ export default function Ideation() {
               loading="lazy"
               width="196"
               height="250"
-              className="z-20 -mt-[200px] w-[333px] h-auto drop-shadow-xl"
+              className="z-20 -mt-[90px] w-[333px] h-auto drop-shadow-xl"
               src="/assets/arvion/ARV_sketch_01.webp"
               style={{ y: y2 }}
             />

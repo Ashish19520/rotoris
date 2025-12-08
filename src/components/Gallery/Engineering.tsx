@@ -58,8 +58,8 @@ export default function Engineering() {
             alt="Engineering sketch"
             loading="lazy"
             width="186"
-            height="244"
-            className="z-20 w-[286px] mt-[50px] h-auto opacity-80"
+            height="200"
+            className="z-20 w-[230px] -mr-[-110px] h-auto opacity-80 md:absolute md:right-[100px]"
             src="/assets/arvion/ARV_sketch_03.webp"
             style={getParallaxStyle(y1)}
           />
@@ -77,7 +77,7 @@ export default function Engineering() {
             loading="lazy"
             width="260"
             height="320"
-            className="z-0 -mt-[250px] w-[300px] h-auto opacity-70"
+            className="z-0 -mt-[180px] mr-[50px] w-[250px] h-auto opacity-70"
             src="/assets/arvion/ARV_sketch_04.webp"
             style={getParallaxStyle(y3)}
           />
