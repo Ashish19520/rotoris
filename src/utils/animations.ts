@@ -12,7 +12,7 @@ const baseTransition = {
 
 export const fadeUpVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: baseTransition },
+  visible: { opacity: 10, y: 0, transition: baseTransition },
 };
 
 export const fadeInVariants: Variants = {

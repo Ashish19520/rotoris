@@ -1,32 +1,22 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useInView, useIsMobile } from '../../hooks';
+import { motion } from 'framer-motion';
+import { useInView } from '../../hooks';
 import { fadeUpVariants, staggerContainerVariants } from '../../utils/animations';
+import { useWindowWidth } from '../../utils/width';
 
 export default function Engineering() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isMobile = useIsMobile();
+  const width=useWindowWidth()
 
   const { ref: inViewRef, inView } = useInView<HTMLDivElement>({
     threshold: 0.1,
     triggerOnce: true,
   });
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 180]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, 300]);
-
-  const getParallaxStyle = (yValue: typeof y1) => (isMobile ? {} : { y: yValue });
-
   return (
     <div ref={sectionRef} className="relative overflow-hidden">
       <motion.div
-        className="text-center md:hidden relative z-[2]"
+        className={`text-center md:hidden relative z-[2]  ${width<=768?"mt-[60px]":""} `}
         variants={staggerContainerVariants}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
@@ -50,39 +40,37 @@ export default function Engineering() {
         ref={inViewRef}
         className="relative z-[2] flex flex-col md:flex-row items-center justify-start px-0 py-4 md:px-8 gap-12 md:w-4/5 mx-auto"
       >
-        <div
-          className="relative w-full md:w-1/2 max-w-5xl md:max-w-none mx-auto h-[560px] md:h-[580px] lg:h-[610px] z-[1] pointer-events-none overflow-hidden flex flex-col items-center"
-          aria-hidden="true"
-        >
-          <motion.img
-            alt="Engineering sketch"
-            loading="lazy"
-            width="186"
-            height="200"
-            className="z-20 w-[230px] -mr-[-110px] h-auto opacity-80 md:absolute md:right-[100px]"
-            src="/assets/arvion/ARV_sketch_03.webp"
-            style={getParallaxStyle(y1)}
-          />
-          <motion.img
-            alt="Watch component"
-            loading="lazy"
-            width="186"
-            height="250"
-            className="z-10 rounded-lg w-[246px] -mt-[150px] h-auto drop-shadow-xl"
-            src="/assets/arvion/ARV4.webp"
-            style={getParallaxStyle(y2)}
-          />
-          <motion.img
-            alt="Technical drawing"
-            loading="lazy"
-            width="260"
-            height="320"
-            className="z-0 -mt-[180px] mr-[50px] w-[250px] h-auto opacity-70"
-            src="/assets/arvion/ARV_sketch_04.webp"
-            style={getParallaxStyle(y3)}
-          />
-        </div>
 
+        <div className="relative w-full md:w-[40%] max-w-5xl md:max-w-none mx-auto h-[560px] 
+          md:h-[580px] lg:h-[610px] z-[1] pointer-events-none overflow-visible md:overflow-visible"
+          aria-hidden="true">
+          <img alt="Image 1" loading="lazy" width="186" height="244" decoding="async"
+            data-nimg="1" className="z-20 absolute left-[40%] -translate-x-[40%] top-0 w-[286px] md:w-[386px] h-auto opacity-80"
+            src="https://prelaunch-rotoris.s3.ap-south-1.amazonaws.com/public/assets/products/Arvion/ARV_sketch_03.webp"
+            style={{
+              color: "transparent",
+              transform: "translate3d(-50%,  16.2197px, 0px)"
+            }}
+          />
+
+          <img alt="Image 2" loading="lazy" width="186" height="250" decoding="async" data-nimg="1"
+            className="absolute z-10 left-[65%] -translate-x-[65%] rounded-[8px] top-0 w-[186px] md:w-[246px] h-auto drop-shadow-xl"
+            src="https://prelaunch-rotoris.s3.ap-south-1.amazonaws.com/public/assets/products/Arvion/ARV4.webp"
+            style={{
+              color: "transparent",
+              transform: "translate3d(-50%, 144.238px, 0px)"
+            }}
+          />
+
+          <img alt="Image 3" loading="lazy" width="260" height="320" decoding="async" data-nimg="1"
+            className="absolute z-0 left-1/2 -translate-x-1/2 -top-10 w-[300px] md:w-[500px] h-auto opacity-70"
+            src="https://prelaunch-rotoris.s3.ap-south-1.amazonaws.com/public/assets/products/Arvion/ARV_sketch_04.webp"
+            style={{
+              color: "transparent",
+              transform: "translate3d(-50%, 370.275px, 0px)"
+            }} />
+
+        </div>
         <motion.div
           className="hidden md:flex flex-col justify-center w-1/2 max-w-lg space-y-6 z-[2] text-left"
           variants={staggerContainerVariants}
